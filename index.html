@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+rel="stylesheet">
+<style type="text/css">
+body {
+	background: #19171c;
+	margin: 0;
+	padding: 0;
+	font-family: tahoma;
+	color: #fff;
+}
+
+a {
+	color: #4b367c;
+	padding: 2px 10px;
+	border: #4b367c 1px solid;
+	border-radius: 2px;
+	margin-bottom: 30px;
+	display: inline-block;
+}
+a:hover {
+	background: #4b367c;
+	color: #fff;
+}
+
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+#main {
+	text-align:center; 
+	width: 300px;
+	margin: 100px auto;
+}
+.content {
+	display: inline-block;
+	height: 70px;
+	width: 250px;
+	border-radius: 4px;
+	position: relative;
+	overflow: hidden;
+	border: 0px solid #4b367c;
+}
+
+.icon {
+	position: absolute;
+	top: 11px;
+	left: 10px;
+	animation: icon-anim  .5s forwards;
+}
+.title {
+	position: absolute;
+	top: 11px;
+	left: 70px;
+	font-size: 12px;
+	font-weight: 100;
+	opacity: .5;	
+}
+.nick {
+	position: absolute;
+	top: 25px;
+	left: 70px;
+	font-size: 24px;
+	font-weight: bold;
+}
+.bg-color {
+	background: #4b367c;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 15px;
+	left: 15px;
+	border-radius: 50%;
+	transform: scale(0);
+	/*transition: .5s;*/
+	animation: bg-color-anim .75s forwards;
+	animation-delay: .25s;
+}
+
+@keyframes bg-color-anim {
+	0%   { transform: scale(0); }
+	100% { transform: scale(12); }
+}
+
+@keyframes icon-anim {
+	0%   { transform: scale(0); }
+	100% { transform: scale(1); }
+}
+</style>
+<body>
+
+	<div id="main">
+		<a onclick="scale()">Click me</a>
+		<div class="content">
+			<div class="bg-color"></div>
+			<div class="icon"><i class="material-icons md-light md-48">face</i></div>
+			<div class="title">New subscriber</div>
+			<div class="nick">Nickname</div>
+		</div>		
+	</div>
+	<script type="text/javascript">
+		function scale(){
+			var div = document.createElement('div');
+			div.className = "content";
+			div.innerHTML = '<div class="bg-color"></div><div class="icon"><i class="material-icons md-light md-48">face</i></div><div class="title">New subscriber</div><div class="nick">Nickname</div>';
+			document.getElementById('main').appendChild(div);
+		}
+	</script>
+</body>
+</html>
